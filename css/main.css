@@ -79,9 +79,6 @@ nav a:hover {
   width: 441px;
   height: 441px;
   background-color: var(--item);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .item {
@@ -94,15 +91,21 @@ nav a:hover {
 }
 
 .buttons_item {
+  width: 441px;
   position: absolute;
   display: flex;
   justify-content: space-between;
 }
 
 .status_item {
+  margin: 15px;
   padding: 5px 10px;
   width: fit-content;
   background-color: var(--bestseler);
   text-transform: uppercase;
   border-radius: 25px;
+}
+
+.like {
+  margin: 15px;
 }
