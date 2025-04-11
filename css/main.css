@@ -24,6 +24,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: var(--Z_header);
 }
 
 nav {
@@ -48,8 +49,38 @@ nav a:hover {
   border-bottom: solid 2px #000;
 }
 
+/*Humburger_menu*/
+
+.humburger_menu {
+  display: none;
+}
+
+.humburger_menu img {
+  margin-right: 10px;
+}
+
+.mobile_header {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mini_logo_humburger {
+  display: none;
+  margin: 30px;
+}
+
+/*Title+Logo*/
+
 .logo {
+  width: 100%;
   margin: 150px 0 40px 0;
+}
+
+.logo svg {
+  max-width: 750px;
 }
 
 .logo_background {
@@ -57,10 +88,17 @@ nav a:hover {
   height: 732px;
   border-radius: 4px;
   overflow: hidden;
+  object-fit: cover;
+  object-position: center;
 }
 
 .logo_background img {
   width: 100%;
+  height: 100%;
+}
+
+.close {
+  display: none;
 }
 
 /*Slider*/
@@ -76,23 +114,31 @@ nav a:hover {
 /*Item*/
 
 .img_block_item {
-  width: 441px;
-  height: 441px;
+  max-width: 441px;
+  max-height: 441px;
   background-color: var(--item);
 }
 
 .item {
-  width: 441px;
-  height: 523px;
+  max-width: var(--item_width);
+  max-height: 523px;
 }
 
 .img_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img_item img {
   width: 90%;
 }
 
 .buttons_item {
-  width: 441px;
+  max-width: var(--item_width);
+  width: 90%;
   position: absolute;
+  z-index: var(--Z_item);
   display: flex;
   justify-content: space-between;
 }
@@ -107,5 +153,24 @@ nav a:hover {
 }
 
 .like {
+  cursor: pointer;
   margin: 15px;
+}
+
+.text {
+  margin: 20px 0;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+}
+
+.number {
+  margin-right: 5px;
 }

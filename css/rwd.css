@@ -1,0 +1,76 @@
+@media only screen and (max-width: 600px) {
+  .right_naw {
+    display: none;
+  }
+
+  #background_mobile_menu {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 102%;
+    height: 100vh;
+    transform: translate(-6%);
+  }
+
+  .center_naw {
+    transition: 0.5s;
+    transform: translate(125%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--white);
+    align-items: start;
+  }
+
+  .center_naw_block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    transform: translate(0, 100%);
+  }
+
+  .center_naw_block a {
+    margin: 15px 0;
+  }
+
+  .idomods {
+    display: none;
+  }
+
+  .mini_logo_humburger {
+    display: block;
+  }
+
+  .close {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .close p {
+    margin-left: 5px;
+  }
+
+  .humburger_menu {
+    display: flex;
+  }
+
+  /*Title*/
+  .logo {
+    margin: 120px 0 40px 0;
+  }
+  .logo_background {
+    height: 530px;
+  }
+
+  .logo_background img {
+    width: fit-content;
+    transform: translate(-29%, 0);
+  }
+}

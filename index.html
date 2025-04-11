@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="css/config.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/rwd.css" />
     <title>Document</title>
   </head>
   <body class="container">
@@ -19,12 +20,24 @@
             <img src="img/mini_logo.png" alt="mini_logo" />
             <a>Forma’sint.</a>
           </div>
-          <a>idomods </a>
+          <a class="idomods">idomods </a>
         </div>
-        <div class="center_naw flex">
-          <a class="canter_link">home</a>
-          <a>Featured products</a>
-          <a>Product listing</a>
+        <div id="background_mobile_menu" onclick="toggle(false)"></div>
+        <div class="center_naw flex" id="toggle">
+          <div class="mobile_header">
+            <div class="mini_logo_humburger">
+              <img src="img/mini_logo.png" alt="mini_logo" />
+            </div>
+            <div class="close" onclick="toggle(false)">
+              <img src="img/close.png" alt="" />
+              <p>close</p>
+            </div>
+          </div>
+          <div class="center_naw_block">
+            <a>home</a>
+            <a>Featured products</a>
+            <a>Product listing</a>
+          </div>
         </div>
         <div class="right_naw">
           <div class="auth flex">
@@ -32,13 +45,17 @@
             <a>Frontend developer</a>
           </div>
         </div>
+        <div class="humburger_menu" onclick="toggle(true)">
+          <div>
+            <img src="img/humburger_menu.png" alt="" />
+          </div>
+          <p>menu</p>
+        </div>
       </nav>
     </header>
     <div class="title">
       <div class="logo">
         <svg
-          width="918"
-          height="138"
           viewBox="0 0 918 138"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -71,21 +88,27 @@
                 <img src="img/like.png" alt="like" />
               </div>
             </div>
-            <div>
-              <img class="img_item" src="img/coat.png" alt="product" />
+            <div class="img_item">
+              <img src="img/coat.png" alt="product" />
             </div>
           </div>
           <div class="text">
             <div class="name">
-              <p></p>
+              <p>Dark blue alpine climbing jacket</p>
             </div>
             <div class="price">
-              <p class="symbol_of_valuta">€</p>
-              <p>300</p>
-              <p class="valuta">EUR</p>
+              <p>€</p>
+              <p class="number">300,00</p>
+              <p>EUR</p>
             </div>
           </div>
         </div>
+      </div>
+      <div class="page">
+        <select name="" id="" onclick="number_of_items()">
+          <option value="">14</option>
+        </select>
+        <div class="items"></div>
       </div>
     </div>
     <div class="page_of_items"></div>
