@@ -16,21 +16,34 @@ const toggle = (state) => {
   }
 };
 
-const number_of_items = async () => {
-  try {
-    const response = await fetch(
-      "https://brandstestowy.smallhost.pl/api/random?pageSize=100"
-    );
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    const numbes = json.data.length;
-    for (let index = 0; index < json.data.length; index + 14) {
-      console.log(index);
-    }
-  } catch (error) {
-    console.error(error.message);
-  }
+const getData = async (pageNumber, pageSize) => {
+  console.log(pageNumber, pageSize);
+  const url = `https://brandstestowy.smallhost.pl/api/random${
+    pageNumber ? `?pageNumber=${pageNumber}` : ""
+  }${pageSize ? "&" : ""}${pageSize ? `pageSize=${pageSize}` : ""}`;
+  console.log(url);
+  const data = await fetch(url);
+  const jsonData = await data.json();
+  return jsonData;
 };
+
+const optionsNumberCalculate = async () => {
+  const optionsNumber = [];
+  const numbers = await getData(1, 100);
+  for (let index = 0; index < numbers.data.length; index = index + 14) {
+    if (index > 0) {
+      optionsNumber.push(index);
+    }
+  }
+  return optionsNumber;
+};
+
+const render = async (id, payload) => {
+  const html = await payload;
+  const idDOC = document.querySelector(`#${id}`);
+  idDOC.innerHTML += html.join(" ");
+};
+
+render("select", options());
+render("slider", itemsForSlider());
+render("page", itemsForPage());

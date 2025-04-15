@@ -4,6 +4,7 @@
   }
 
   #background_mobile_menu {
+    display: block;
     position: absolute;
     top: 0;
     visibility: hidden;
@@ -72,5 +73,11 @@
   .logo_background img {
     width: fit-content;
     transform: translate(-29%, 0);
+  }
+
+  /*SLider*/
+  .img_block_item {
+    max-width: 441px;
+    max-height: 441px;
   }
 }
