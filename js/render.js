@@ -1,7 +1,3 @@
-const options = async () => {
-  const optionsNumber = await optionsNumberCalculate();
-  return optionsNumber.map((e) => `{<option value="${e}">${e}</option>}`);
-};
 const itemsForSlider = async () => {
   const data = await getData();
   const html = data.data.map(
@@ -61,6 +57,5 @@ const render = async (id, payload) => {
   idDOC.innerHTML += html.join(" ");
 };
 
-render("select", options());
 render("slider", itemsForSlider());
 render("page", itemsForPage());

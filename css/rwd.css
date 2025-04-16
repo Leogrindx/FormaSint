@@ -1,5 +1,6 @@
 @media only screen and (max-width: 600px) {
   header {
+    width: 100%;
     left: 0;
   }
 
@@ -108,6 +109,23 @@
     max-height: 498px;
     height: 100vh;
   }
+
+  .itemPage {
+    width: 44%;
+  }
+
+  .itemBlock {
+    height: 100%;
+  }
+
+  .idItem {
+    font-size: 8px;
+  }
+
+  .orederItem:nth-child(5) {
+    order: 0;
+  }
+
   .textTitlePageBox {
     width: 90%;
   }
@@ -122,5 +140,15 @@
 
   .textTitlePage h1 {
     font-size: 32px;
+  }
+
+  .numberOfProducts {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .numberOfProducts p {
+    margin-bottom: 20px;
+    margin-right: 0;
   }
 }
