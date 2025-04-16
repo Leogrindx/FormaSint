@@ -1,6 +1,18 @@
 @media only screen and (max-width: 600px) {
+  header {
+    left: 0;
+  }
+
+  nav {
+    padding: 5%;
+  }
+
   .right_naw {
     display: none;
+  }
+
+  .title {
+    margin-top: -20px;
   }
 
   #background_mobile_menu {
@@ -79,5 +91,36 @@
   .img_block_item {
     max-width: 441px;
     max-height: 441px;
+  }
+
+  .swiper-button-next {
+    transform: translate(0px, -30px);
+    width: 64px;
+    height: 64px;
+  }
+
+  .swiper-slide {
+    margin-bottom: 10px;
+  }
+
+  /*page*/
+  .titlePage {
+    max-height: 498px;
+    height: 100vh;
+  }
+  .textTitlePageBox {
+    width: 90%;
+  }
+
+  .imgTitlePage {
+    width: 130%;
+    max-height: 498px;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-6%, 0px);
+  }
+
+  .textTitlePage h1 {
+    font-size: 32px;
   }
 }

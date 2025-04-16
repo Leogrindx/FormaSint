@@ -7,4 +7,6 @@
   --Z_header: 2;
   --Z_item: 1;
   --Z_TitlePage: 1;
+  --swiper-scrollbar-size: 4px;
+  --swiper-scrollbar-right: -40px;
 }

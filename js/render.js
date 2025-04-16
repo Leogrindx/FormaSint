@@ -54,3 +54,13 @@ const itemsForPage = async () => {
   );
   return html;
 };
+
+const render = async (id, payload) => {
+  const html = await payload;
+  const idDOC = document.querySelector(`#${id}`);
+  idDOC.innerHTML += html.join(" ");
+};
+
+render("select", options());
+render("slider", itemsForSlider());
+render("page", itemsForPage());
