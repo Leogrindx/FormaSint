@@ -18,7 +18,7 @@ const swiper = new Swiper(".swiper", {
   scrollbar: {
     dragClass: "swiper-scrollbar-drag",
     el: ".swiper-scrollbar",
-    dragSize: window.innerHeight > 600 ? 441 : "auto",
+    dragSize: window.innerWidth > 600 ? 441 : "auto",
     draggable: true,
   },
 });
