@@ -1,0 +1,206 @@
+@media only screen and (max-width: 600px) {
+  header {
+    width: 100%;
+    left: 0;
+  }
+
+  nav {
+    padding: 5%;
+  }
+
+  .right_naw {
+    display: none;
+  }
+
+  .title {
+    margin-top: -20px;
+  }
+
+  #background_mobile_menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 102%;
+    height: 100vh;
+    transform: translate(-6%);
+  }
+
+  .center_naw {
+    transition: 0.5s;
+    transform: translate(125%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--white);
+    align-items: start;
+    display: block;
+  }
+
+  .center_naw_block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    transform: translate(0, 100%);
+  }
+
+  .center_naw_block a {
+    margin: 15px 0;
+  }
+
+  .idomods {
+    display: none;
+  }
+
+  .mini_logo_humburger {
+    display: block;
+  }
+
+  .close {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .close p {
+    margin-left: 5px;
+  }
+
+  .humburger_menu {
+    display: flex;
+  }
+
+  /*Title*/
+  .logo {
+    margin: 120px 0 40px 0;
+  }
+  .logo_background {
+    height: 530px;
+  }
+
+  .logo_background img {
+    width: fit-content;
+    transform: translate(-29%, 0);
+  }
+
+  /*SLider*/
+  .featured_products {
+    padding-top: 23%;
+  }
+
+  .img_block_item {
+    max-width: 441px;
+    max-height: 441px;
+  }
+
+  .swiper-button-next {
+    transform: translate(0px, -30px);
+    width: 64px;
+    height: 64px;
+  }
+
+  .swiper-slide {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  /*page*/
+
+  .page {
+    padding-top: 20%;
+    padding-bottom: 6%;
+  }
+
+  .numberOfProducts {
+    margin-top: 20px;
+  }
+
+  .titlePage {
+    max-height: 498px;
+    height: 100vh;
+  }
+
+  .itemPage {
+    width: 44%;
+  }
+
+  .items {
+    margin: 10px -10px -10px -10px;
+  }
+
+  .itemBlock {
+    height: 100%;
+  }
+
+  .idItem {
+    font-size: 8px;
+  }
+
+  .orederItem:nth-child(5) {
+    order: 0;
+  }
+
+  .textTitleBannerBox {
+    width: 90%;
+  }
+
+  .imgTitleBanner {
+    width: 130%;
+    max-height: 498px;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-6%, 0px);
+  }
+
+  .textTitleBanner h1 {
+    font-size: 32px;
+  }
+
+  .titlOfProducts {
+    text-align: center;
+  }
+
+  .selectBox {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 0;
+    width: fit-content;
+  }
+
+  .popupBox {
+    width: 90%;
+    max-width: 312px;
+    max-height: 420px;
+  }
+
+  .tablePopup {
+    width: 90%;
+    max-width: 312px;
+    max-height: 420px;
+  }
+
+  .idPopup {
+    margin: 20px;
+  }
+
+  .closePopup {
+    margin: 20px;
+  }
+
+  .popupImg {
+    width: 130%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .orederItem:nth-child(5) {
+    order: 0;
+  }
+}

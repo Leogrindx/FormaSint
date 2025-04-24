@@ -1,0 +1,16 @@
+:root {
+  --white: #ffffff;
+  --nav_font: "Inter Tight";
+  --bestseler: #d9d6b0;
+  --LimitedEdition: #d4b0d9;
+  --item: #eaeae8;
+  --Z_header: 2;
+  --Z_item: 1;
+  --Z_TitlePage: 1;
+  --Z_sizeOfPage: 1;
+  --Z_popup: 3;
+  --swiper-scrollbar-size: 2px;
+  --swiper-scrollbar-right: -40px;
+  --Z_itemHover: 2;
+  --Z_like: 3;
+}
