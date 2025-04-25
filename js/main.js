@@ -24,7 +24,7 @@ const likeOut = (e) => {
 };
 
 const toggleMenu = (state) => {
-  if (window.innerWidth < 600) {
+  if (window.innerWidth < 980) {
     const background_mobile_menu = document.querySelector(
       "#background_mobile_menu"
     );

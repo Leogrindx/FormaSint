@@ -1,4 +1,4 @@
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 980px) {
   .container {
     width: 90%;
   }
@@ -217,11 +217,9 @@
   }
 
   .textTitleBannerBox {
-    width: fit-content;
-  }
-
-  .textTitleBanner {
     max-width: 441px;
+    max-height: 441px;
+    border-radius: 6px;
   }
 
   .imgTitleBanner {
