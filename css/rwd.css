@@ -203,4 +203,12 @@
   .orederItem:nth-child(5) {
     order: 0;
   }
+
+  .banner {
+    max-width: 441px;
+    max-height: 441px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 6px;
+  }
 }
