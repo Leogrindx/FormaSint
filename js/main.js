@@ -8,11 +8,11 @@ const getData = async (pageNumber, pageSize) => {
 };
 
 miniLogo.addEventListener("mouseover", () => {
-  miniLogo.src = "img/hoverLogo.svg";
+  miniLogoImg.src = "img/hoverLogo.svg";
 });
 
 miniLogo.addEventListener("mouseout", () => {
-  miniLogo.src = "img/miniLogo.svg";
+  miniLogoImg.src = "img/miniLogo.svg";
 });
 
 const likeOver = (e) => {

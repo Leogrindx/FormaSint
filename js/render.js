@@ -1,5 +1,5 @@
 const itemsForSlider = async () => {
-  const data = await getData(1, 10);
+  const data = await getData(1, 8);
   const html = data.data.map(
     (e) => `
     <div class="swiper-slide">
@@ -34,8 +34,8 @@ const itemsForSlider = async () => {
   return html.join(" ");
 };
 
-const itemsForPage = async (number = 1, size = 14) => {
-  const data = await getData(number, size);
+const itemsForPage = async (numberOfPage = 1, size = 14) => {
+  const data = await getData(numberOfPage, size);
   const html = data.data.map(
     (e) =>
       `<div class="itemPage ${
@@ -52,6 +52,21 @@ const itemsForPage = async (number = 1, size = 14) => {
       </div>
       `
   );
+  if (numberOfPage === 1) {
+    html.unshift(`<div class="banner" id="banner">
+          <div class="textTitleBannerBox">
+            <div class="textTitleBanner">
+              <p>Forma’sint</p>
+              <h1>You'll look and feel like the champion.</h1>
+            </div>
+            <button class="buttonTitleBanner">
+              <p>Check this out</p>
+              <div><img src="img/arrowButton.svg" alt="arrow" /></div>
+            </button>
+          </div>
+          <img class="imgTitleBanner" src="img/titlePage.jfif" alt="" />
+        </div>`);
+  }
   return html.join(" ");
 };
 
@@ -113,9 +128,5 @@ window.addEventListener("scroll", (e) => {
   ) {
     render("page", itemsForPage(numberOfPage, size));
     numberOfPage++;
-    const banner = document.querySelector("#banner");
-    if (banner) {
-      banner.style.display = "none";
-    }
   }
 });

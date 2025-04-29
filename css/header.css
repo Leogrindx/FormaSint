@@ -36,6 +36,10 @@ nav a:hover {
   border-bottom: solid 2px #000;
 }
 
+.mini_logo {
+  margin-right: 10px;
+}
+
 .idomods {
   display: flex;
 }

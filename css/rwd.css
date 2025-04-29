@@ -151,7 +151,6 @@
   }
 
   .textTitleBannerBox {
-    width: 90%;
   }
 
   .imgTitleBanner {
@@ -217,9 +216,6 @@
   }
 
   .textTitleBannerBox {
-    max-width: 441px;
-    max-height: 441px;
-    border-radius: 6px;
   }
 
   .imgTitleBanner {
