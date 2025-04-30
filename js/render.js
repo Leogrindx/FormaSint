@@ -31,6 +31,7 @@ const itemsForSlider = async () => {
       </div>
     </div>`
   );
+  console.log(html.join(" "))
   return html.join(" ");
 };
 
@@ -105,7 +106,7 @@ const render = async (id, payload, typeRender = true) => {
   }
 };
 
-render("slider", itemsForSlider());
+// render("slider", itemsForSlider());
 render("page", itemsForPage());
 
 const togglePopup = (img, id, state) => {

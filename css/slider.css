@@ -27,24 +27,20 @@
   padding-top: 8%;
 }
 
-.swiperButton {
+.swiper-button-next {
+  transform: translate(-30%, -70%);
   width: 72px;
   height: 72px;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
-  position: absolute;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  transform: translate(-25%, -470%);
 }
 
-.swiperButton img {
-  position: relative;
-  z-index: 2;
+.swiper-button-next::after {
+  display: none;
 }
 
 /*Item*/
