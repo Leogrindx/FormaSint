@@ -1,40 +1,3 @@
-const itemsForSlider = async () => {
-  const data = await getData(1, 8);
-  const html = data.data.map(
-    (e) => `
-    <div class="swiper-slide">
-      <div class="item">
-        <div class="itemHover"></div>
-        <div class="img_block_item">
-          <div class="buttons_item">
-            <div class="status_item">
-              <p>bestseller</p>
-            </div>
-            <div>
-              <img class="like" src="img/like.svg" alt="like" />
-            </div>
-          </div>
-          <div class="img_item">
-            <img src="${e.image}" alt="product" />
-          </div>
-        </div>
-        <div class="text">
-          <div class="name">
-            <p>${e.text}</p>
-          </div>
-          <div class="price">
-            <p>€</p>
-            <p class="number">300,00</p>
-            <p>EUR</p>
-          </div>
-        </div>
-      </div>
-    </div>`
-  );
-  console.log(html.join(" "))
-  return html.join(" ");
-};
-
 const itemsForPage = async (numberOfPage = 1, size = 14) => {
   const data = await getData(numberOfPage, size);
   const html = data.data.map(
@@ -106,7 +69,6 @@ const render = async (id, payload, typeRender = true) => {
   }
 };
 
-// render("slider", itemsForSlider());
 render("page", itemsForPage());
 
 const togglePopup = (img, id, state) => {
