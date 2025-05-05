@@ -30,6 +30,7 @@ nav a {
   cursor: pointer;
   margin-left: 15px;
   border-bottom: solid 2px #fff;
+  transition: all 0.5s;
 }
 
 nav a:hover {
