@@ -9,15 +9,11 @@
   }
 
   nav {
-    padding: 5%;
+    padding: 24px 5%;
   }
 
   .right_naw {
     display: none;
-  }
-
-  .title {
-    margin-top: -20px;
   }
 
   #background_mobile_menu {
@@ -83,7 +79,7 @@
 
   /*Title*/
   .logo {
-    margin: 120px 0 40px 0;
+    margin: 106px 0 40px 0;
   }
   .logo_background {
     height: 530px;
@@ -94,10 +90,6 @@
   }
 
   /*SLider*/
-  .featured_products {
-    padding-top: 23%;
-  }
-
   .img_block_item {
     max-width: 441px;
     max-height: 441px;
@@ -117,7 +109,6 @@
   /*page*/
 
   .page {
-    padding-top: 20%;
     padding-bottom: 6%;
   }
 
@@ -219,11 +210,9 @@
   .orederItem:nth-child(5) {
     order: 0;
   }
-
-  
 }
 
-
+/* 
 @media only screen and (max-width: 1900px) {
   
-}
+} */

@@ -1,5 +1,5 @@
 .page {
-  padding-top: 8%;
+  margin-top: var(--GapSection);
   padding-bottom: 3%;
 }
 
