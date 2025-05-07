@@ -4,7 +4,9 @@ const itemsForPage = async (numberOfPage = 1, size = 14) => {
     (e) =>
       `<div class="itemPage ${
         e.id < 6 ? "orederItem" : ""
-      }" onclick="togglePopup('${e.image}', ${e.id}, true)">
+      }" onclick="togglePopup('${e.image}', ${e.id}, true)" data-id="${
+        e.id
+      }" data-image="${e.image} "data-state="true">
         <div class="itemBlock">
           <div class="img_block_item">
             <div class="idItem">ID: ${e.id < 10 ? `0${e.id}` : e.id}</div>
@@ -71,6 +73,15 @@ const render = async (id, payload, typeRender = true) => {
 
 render("page", itemsForPage());
 
+window.addEventListener("load", (e) => {
+  const itemsPage = document.querySelectorAll(".itemPage");
+  itemsPage.forEach((e) => {
+    e.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+  });
+});
+
 const togglePopup = (img, id, state) => {
   if (state) {
     render("popup", popup(id, img), false);
@@ -91,5 +102,13 @@ window.addEventListener("scroll", (e) => {
   ) {
     render("page", itemsForPage(numberOfPage, size));
     numberOfPage++;
+    window.addEventListener("load", (e) => {
+      const itemsPage = document.querySelectorAll(".itemPage");
+      itemsPage.forEach((e) => {
+        e.addEventListener("click", (e) => {
+          console.log(e.target);
+        });
+      });
+    });
   }
 });
