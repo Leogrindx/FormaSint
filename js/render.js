@@ -1,39 +1,12 @@
-const itemsForPage = async (numberOfPage = 1, size = 14) => {
-  const data = await getData(numberOfPage, size);
-  const html = data.data.map(
-    (e) =>
-      `<div class="itemPage ${
-        e.id < 6 ? "orederItem" : ""
-      }" onclick="togglePopup('${e.image}', ${e.id}, true)" data-id="${
-        e.id
-      }" data-image="${e.image} "data-state="true">
-        <div class="itemBlock">
-          <div class="img_block_item">
-            <div class="idItem">ID: ${e.id < 10 ? `0${e.id}` : e.id}</div>
-            <div class="img_item">
-              <img src="${e.image}" alt="product" />
-            </div>
-          </div>
-        </div>
-      </div>
-      `
-  );
-  if (numberOfPage === 1) {
-    html.unshift(`<div class="banner" id="banner">
-          <div class="textTitleBannerBox">
-            <div class="textTitleBanner">
-              <p>Forma’sint</p>
-              <h1>You'll look and feel like the champion.</h1>
-            </div>
-            <button class="buttonTitleBanner">
-              <p>Check this out</p>
-              <div><img src="img/arrowButton.svg" alt="arrow" /></div>
-            </button>
-          </div>
-          <img class="imgTitleBanner" src="img/titlePage.jfif" alt="" />
-        </div>`);
+const render = async (id, payload, typeRender = true) => {
+  console.log("render");
+  const html = await payload;
+  const idDOC = document.querySelector(`#${id}`);
+  if (typeRender) {
+    idDOC.innerHTML += html;
+  } else {
+    idDOC.innerHTML = html;
   }
-  return html.join(" ");
 };
 
 const popup = (id, image) => {
@@ -60,29 +33,25 @@ const popup = (id, image) => {
   return html;
 };
 
-const render = async (id, payload, typeRender = true) => {
-  console.log("render");
-  const html = await payload;
-  const idDOC = document.querySelector(`#${id}`);
-  if (typeRender) {
-    idDOC.innerHTML += html;
-  } else {
-    idDOC.innerHTML = html;
-  }
+const banner = () => {
+  const html = `
+      <div class="banner" id="banner">
+        <div class="textTitleBannerBox">
+          <div class="textTitleBanner">
+            <p>Forma’sint</p>
+            <h1>You'll look and feel like the champion.</h1>
+          </div>
+          <button class="buttonTitleBanner">
+            <p>Check this out</p>
+            <div><img src="img/arrowButton.svg" alt="arrow" /></div>
+          </button>
+        </div>
+        <img class="imgTitleBanner" src="img/titlePage.jfif" alt="" />
+      </div>`;
+  return html;
 };
 
-render("page", itemsForPage());
-
-window.addEventListener("load", (e) => {
-  const itemsPage = document.querySelectorAll(".itemPage");
-  itemsPage.forEach((e) => {
-    e.addEventListener("click", (e) => {
-      console.log(e.target);
-    });
-  });
-});
-
-const togglePopup = (img, id, state) => {
+const togglePopup = (id, img, state) => {
   if (state) {
     render("popup", popup(id, img), false);
     document.body.style.overflow = "hidden";
@@ -92,6 +61,32 @@ const togglePopup = (img, id, state) => {
   }
 };
 
+const itemsForPage = async (numberOfPage = 1, size = 14) => {
+  const data = await getData(numberOfPage, size);
+  const items = document.querySelector("#items");
+  const html = data.data.forEach((e) => {
+    const itemPage = document.createElement("div");
+    itemPage.classList = `itemPage ${e.id < 6 ? "orederItem" : ""}`;
+    itemPage.addEventListener("click", () => {
+      togglePopup(e.id, e.image, true);
+    });
+    itemPage.innerHTML = `
+        <div class="itemBlock">
+          <div class="img_block_item">
+            <div class="idItem">ID: ${e.id < 10 ? `0${e.id}` : e.id}</div>
+            <div class="img_item">
+              <img src="${e.image}" alt="product" />
+            </div>
+          </div>
+        </div>
+    `;
+    items.appendChild(itemPage);
+  });
+};
+
+render("items", banner());
+itemsForPage();
+
 window.addEventListener("scroll", (e) => {
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
   const scrolled = window.scrollY;
@@ -100,15 +95,7 @@ window.addEventListener("scroll", (e) => {
     Math.ceil(scrolled) === scrollable ||
     Math.ceil(scrolled) - scrollable === 1
   ) {
-    render("page", itemsForPage(numberOfPage, size));
+    itemsForPage(numberOfPage, size);
     numberOfPage++;
-    window.addEventListener("load", (e) => {
-      const itemsPage = document.querySelectorAll(".itemPage");
-      itemsPage.forEach((e) => {
-        e.addEventListener("click", (e) => {
-          console.log(e.target);
-        });
-      });
-    });
   }
 });

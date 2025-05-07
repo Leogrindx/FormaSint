@@ -73,7 +73,7 @@ document.querySelectorAll(".option").forEach((e) => {
     select();
     document.querySelector("#size").innerHTML = size;
     numberOfPage = 1;
-    render("page", itemsForPage(numberOfPage, size), false);
+    itemsForPage(numberOfPage, size);
     numberOfPage = 2;
   });
 });
