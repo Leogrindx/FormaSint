@@ -57,10 +57,14 @@ menu_tag.addEventListener("touchend", (e) => {
 });
 
 const select = () => {
+  console.log('select');
   document.querySelector("#options").classList.toggle("showOptions");
   document.querySelector("#select").classList.toggle("showSelect");
   document.querySelector("#selectBox").classList.toggle("showBox");
 };
+
+selectDom.addEventListener("click", select());
+
 
 document.querySelectorAll(".option").forEach((e) => {
   e.addEventListener("click", (e) => {
@@ -73,6 +77,7 @@ document.querySelectorAll(".option").forEach((e) => {
     select();
     document.querySelector("#size").innerHTML = size;
     numberOfPage = 1;
+    render("items", banner(), false);
     itemsForPage(numberOfPage, size);
     numberOfPage = 2;
   });

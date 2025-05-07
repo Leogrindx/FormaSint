@@ -54,40 +54,16 @@
   cursor: pointer;
   max-width: 441px;
   max-height: 523px;
+  transition: all 0.5s;
 }
 
 .item:hover {
   opacity: 0.4;
 }
 
-/* 
-.itemHover {
-  position: absolute;
-  max-width: 441px;
-  max-height: 523px;
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
-  z-index: var(--Z_itemHover);
-  opacity: 0;
-} */
-
-/* .hoverLike {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  z-index: var(--Z_itemHover);
-  opacity: 0;
+.item:hover + .like{
+  opacity: 0.4;
 }
-
-.itemHover:hover {
-  opacity: 0.6;
-}
-
-.itemHover:hover + .hoverLike {
-  opacity: 0.6;
-} */
 
 .img_item {
   display: flex;
