@@ -37,25 +37,21 @@
             <p>&lt;/&gt;</p></a
           >
         </div>
-        <div id="background_mobile_menu" onclick="toggleMenu(false)"></div>
+        <div id="background_mobile_menu" class="closeMenu"></div>
         <div class="center_naw flex" id="toggle">
           <div class="mobile_header">
             <div class="mini_logo_humburger">
               <img src="img/miniLogo.svg" alt="mini_logo" />
             </div>
-            <div class="close" onclick="toggleMenu(false)">
+            <div class="closeMenu close">
               <img src="img/close.png" alt="" />
               <p>close</p>
             </div>
           </div>
           <div class="center_naw_block">
-            <a href="#home" onclick="toggleMenu(false)">home</a>
-            <a href="#featured_products" onclick="toggleMenu(false)"
-              >Featured products</a
-            >
-            <a href="#product_listing" onclick="toggleMenu(false)"
-              >Product listing</a
-            >
+            <a href="#home" class="closeMenu">home</a>
+            <a href="#featured_products" class="closeMenu">Featured products</a>
+            <a href="#product_listing" class="closeMenu">Product listing</a>
           </div>
         </div>
         <div class="right_naw" id="home">
@@ -64,7 +60,7 @@
             <a>Frontend developer</a>
           </div>
         </div>
-        <div class="humburger_menu" onclick="toggleMenu(true)">
+        <div class="humburger_menu" id="openMenuHumburger">
           <div>
             <img src="img/humburger_menu.png" alt="" />
           </div>
@@ -109,9 +105,6 @@
                 <div class="buttons_item">
                   <div class="status_item">
                     <p>bestseller</p>
-                  </div>
-                  <div>
-                    <img class="like" src="img/like.svg" alt="like" />
                   </div>
                 </div>
                 <div class="img_item">

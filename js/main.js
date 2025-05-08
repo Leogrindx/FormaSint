@@ -15,13 +15,25 @@ miniLogo.addEventListener("mouseout", () => {
   miniLogoImg.src = "img/miniLogo.svg";
 });
 
-const likeOver = (e) => {
-  e.src = "img/likeHover.svg";
-};
+swiperSlide.forEach((e) => {
+  e.addEventListener("mouseover", (c) => {
+    e.querySelector(".like").classList.add("opacityOn");
+  });
+  e.addEventListener("mouseout", () => {
+    e.querySelector(".like").classList.remove("opacityOn");
+  });
+});
 
-const likeOut = (e) => {
-  e.src = "img/like.svg";
-};
+likes.forEach((e) => {
+  e.addEventListener("mouseover", () => {
+    e.src = "img/likeHover.svg";
+    e.classList.add("opacityOff");
+  });
+  e.addEventListener("mouseout", () => {
+    e.src = "img/like.svg";
+    e.classList.remove("opacityOff");
+  });
+});
 
 const toggleMenu = (state) => {
   if (window.innerWidth < 980) {
@@ -42,6 +54,16 @@ const toggleMenu = (state) => {
   }
 };
 
+closeMenus.forEach((e) => {
+  e.addEventListener("click", (e) => {
+    toggleMenu(false);
+  });
+});
+
+openMenuHumburger.addEventListener("click", (e) => {
+  toggleMenu(true);
+});
+
 menu_tag.addEventListener("touchstart", (e) => {
   start = e.changedTouches[0].clientX;
 });
@@ -57,14 +79,12 @@ menu_tag.addEventListener("touchend", (e) => {
 });
 
 const select = () => {
-  console.log('select');
   document.querySelector("#options").classList.toggle("showOptions");
   document.querySelector("#select").classList.toggle("showSelect");
   document.querySelector("#selectBox").classList.toggle("showBox");
 };
 
-selectDom.addEventListener("click", select());
-
+selectDom.addEventListener("click", select);
 
 document.querySelectorAll(".option").forEach((e) => {
   e.addEventListener("click", (e) => {

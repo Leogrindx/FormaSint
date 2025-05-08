@@ -1,5 +1,4 @@
 const render = async (id, payload, typeRender = true) => {
-  console.log("render");
   const html = await payload;
   const idDOC = document.querySelector(`#${id}`);
   if (typeRender) {

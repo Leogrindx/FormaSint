@@ -61,10 +61,6 @@
   opacity: 0.4;
 }
 
-.item:hover + .like{
-  opacity: 0.4;
-}
-
 .img_item {
   display: flex;
   align-items: center;
@@ -101,9 +97,14 @@
   position: absolute;
   right: 0;
   z-index: var(--Z_like);
+  transition: all 0.5s;
 }
 
-.like:hover {
+.opacityOn {
+  opacity: 0.4;
+}
+
+.opacityOff {
   opacity: 1;
 }
 
